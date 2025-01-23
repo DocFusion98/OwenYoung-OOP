@@ -1,0 +1,7 @@
+-added exit button
+-added 789 new romance options
+-removed jump
+-removed talk
+-removed fun
+-removed visuals
+-added vsync
