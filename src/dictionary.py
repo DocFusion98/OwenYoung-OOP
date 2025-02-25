@@ -1,0 +1,1 @@
+d = ["/images/ClownPeter.png", "/images/Devin.png", "/images/Blu.png"]

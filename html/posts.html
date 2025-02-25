@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Posts
+        </title>
+    </head>
+    <style>
+        .box{
+            margin: 5px;
+            border: 2px double black;
+            padding: 0.5in;
+            box-shadow: 0.3em 0.3em 0.3em black;
+            text-align: left;
+            height: 30vh;
+            width: 40vw;
+            position: absolute;
+            padding-top: 3em;
+            padding-left: 1em;
+            padding-right: 2em;
+            padding-bottom: 2em;
+            top: 50vh;
+            left: 50vw;
+            bottom: 0vh;
+            right: 0vw;
+            transform: translate(-50%, -50%);
+            overflow: auto;
+            background: blue;
+        }
+
+        .pfp{
+            width: 64px;
+            height: 64px;
+            background-image: url(${PFP});
+            image-rendering: auto;
+            border: 1px double gray;
+            image-orientation: from-image;
+        }
+
+        .post1{
+            margin: 2em;
+            border: 2px double black;
+            padding: 2em;
+            text-align: center;
+            background: red;
+        }
+
+        .post2{
+            margin: 2em;
+            border: 2px double black;
+            padding: 2em;
+            text-align: center;
+            background: blueviolet;
+        }
+
+        
+    </style>
+    <body>
+        <div class = "box">
+            <div class = "post1">
+                <div class = "pfp"></div>
+                Posted ${DAYS} days ago
+                <div>${VIEWS} Views</div>
+            </div>
+
+            <hr>
+            <div class = "post2">
+                <div class = "pfp"></div>
+                Posted ${DAYS} days ago
+                <div>${VIEWS} Views</div>
+            </div>
+            <hr>
+            <div class = "post1">
+                <div class = "pfp"></div>
+                Posted ${DAYS} days ago
+                <div>${VIEWS} Views</div>
+            </div>
+            <hr>
+            <div class = "post2">
+                <div class = "pfp"></div>
+                Posted ${DAYS} days ago
+                <div>${VIEWS} Views</div>
+            </div>
+            <hr>
+            <div class = "post1">
+                <div class = "pfp"></div>
+                Posted ${DAYS} days ago
+                <div>${VIEWS} Views</div>
+            </div>
+        </div>
+        
+
+    </body>
+</html>
