@@ -41,6 +41,11 @@ cherrypy.quickstart(app, "/",
         "/images" : {
             "tools.staticdir.on" : True,
             "tools.staticdir.dir" : f"{os.path.abspath(os.path.dirname(__file__))}/../images"
+        },
+
+        "/html":{
+            "tools.staticdir.on" : True,
+            "tools.staticdir.dir" : f"{os.path.abspath(os.path.dirname(__file__))}/../html"
         }
     }
 
