@@ -18,12 +18,15 @@ function checkData(email, name, password, birthdate){
             email_req++;
         }
 
-        if(email[i] != "." && email_req == 3){
+        if(email[i] == "." && email_req == 3){
+            email_req++;
+        }
+        if(email[i] != "." && email_req == 4){
             email_req++;
         }
     }
     
-    if(email_req != 4){
+    if(email_req != 5){
         alert("Please enter a valid email address");
     }
     
