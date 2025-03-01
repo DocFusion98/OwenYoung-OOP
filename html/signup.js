@@ -1,8 +1,16 @@
+"use strict";
 function checkData(email, name, password, birthdate){
     
+    let erroring = false;
+
+    let tmp = document.createElement("div");
     
-    if(email == "" || birthdate == "" || password == "" || name == ""){
-        alert("One or more fields have not been filled out");
+
+    if(email == "" || birthdate == "" || password == "" || name == "" && erroring == false){
+        erroring = true;
+        tmp.classList.add("alert");
+        document.body.appendChild(tmp);
+        tmp.appendChild( document.createTextNode( "One or more fields have not been filled out" ) );
     
     }
     
@@ -18,13 +26,19 @@ function checkData(email, name, password, birthdate){
             email_req++;
         }
 
-        if(email[i] != "." && email_req == 3){
+        if(email[i] == "." && email_req == 3){
+            email_req++;
+        }
+        if(email[i] != "." && email_req == 4){
             email_req++;
         }
     }
     
-    if(email_req != 4){
-        alert("Please enter a valid email address");
+    if(email_req != 5 && erroring == false){
+        erroring = true;
+        tmp.classList.add("alert");
+        document.body.appendChild(tmp);
+        tmp.appendChild( document.createTextNode( "Please enter a valid email address" ) );
     }
     
     let input_date = new Date(birthdate);
@@ -33,8 +47,20 @@ function checkData(email, name, password, birthdate){
     let cur_time = new Date();
     cur_time = Date.now();
     let age = (cur_time - input_date) / 31536000000;
-    if(age < 13){
-        alert("Cannot be less than 13 years old");
+    if(age < 13 && erroring == false){
+        erroring = true;
+        tmp.classList.add("alert");
+        document.body.appendChild(tmp);
+        tmp.appendChild( document.createTextNode( "Cannot be less than 13 years old" ) );
+    }
+    
+    
+    if(erroring == false){
+        while( tmp.childNodes.length > 0 )
+            tmp.removeChild( tmp.childNodes[0] );
+        tmp.classList.add("victory");
+        document.body.appendChild(tmp);
+        tmp.appendChild( document.createTextNode( "Welcome!" ) );
     }
 
 
